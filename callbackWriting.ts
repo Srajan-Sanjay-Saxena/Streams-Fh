@@ -1,5 +1,10 @@
 import fs from "fs";
 
+//! Note that in the callback implementation order of the data is not preserved , because execution of these callbacks are not ordered ,....
+
+//**
+// execution time : 600s
+//  */
 (() => {
   fs.open("./test.txt", "w", (err, fd: number) => {
     if (err) {
