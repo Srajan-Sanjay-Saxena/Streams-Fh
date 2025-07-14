@@ -7,3 +7,6 @@ How writeable streams work internally ?
 
 What happens when in writeable streams we don't care of highWaterMark ?
 -- Say during the write operation in streams , we didn't stop during the back-pressure then automatically the size of our internal buffer starts increasing , leading to memory issues , which is a very bad practice , we should actually wait until the 'drain' event has not been hit .
+
+# write and read --> more granular control
+# writeFile and readFile --> less granular control
