@@ -6,6 +6,8 @@ const readFileHandler = await fs.open("./read.txt", "r");
 const writeFileHandler = await fs.open("./write.txt", "w");
 const chunkBuff = Buffer.alloc(20); // chunk size: 20 bytes
 
+//* we might have concern of reading the stat of 10gb file will block the thread, but no , stat only reads the metadata of the file , don't roll through the whole content.
+
 const fileSize = (await readFileHandler.stat()).size;
 let read = 0;
 
